@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container" (backdropClick)="closeSideNav()">
-  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" >
+  <mat-sidenav position="end" #sidenav class="sidenav" fixedInViewport="true" >
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list (click)="closeSideNav()">
       <a mat-list-item [routerLink]="['/filmes']">Inicial</a>
@@ -8,6 +8,16 @@
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>Conta</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Configurações</span>
+    </button>
+  </mat-menu>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="header-toolbar">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSideNav()">
@@ -29,13 +39,4 @@
 </mat-sidenav-container>
 
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>account_circle</mat-icon>
-    <span>Conta</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>settings</mat-icon>
-    <span>Configurações</span>
-  </button>
-</mat-menu>
+
