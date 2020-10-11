@@ -4,19 +4,19 @@
   <form autocomplete="off" novalidate [formGroup]="filtrosListagem">
     <div class="float-left width50">
       <div class="padding10">
-        <dio-input-text titulo="Pesquise aqui"
+        <fpt-input-text titulo="Pesquise aqui"
                         controlName="texto"
                         [formGroup]="filtrosListagem">
-        </dio-input-text>
+        </fpt-input-text>
       </div>
     </div>
     <div class="float-left width50">
       <div class="padding10">
-        <dio-input-select titulo="Gênero"
+        <fpt-input-select titulo="Gênero"
                           controlName="genero"
                           [opcoes]="generos"
                           [formGroup]="filtrosListagem">
-        </dio-input-select>
+        </fpt-input-select>
       </div>
     </div>
   </form>

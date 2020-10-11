@@ -7,7 +7,7 @@ import { Alerta } from 'src/app/shared/models/alerta';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 
 @Component({
-  selector: 'dio-visualizar-filmes',
+  selector: 'fpt-visualizar-filmes',
   templateUrl: './visualizar-filmes.component.html',
   styleUrls: ['./visualizar-filmes.component.css']
 })
