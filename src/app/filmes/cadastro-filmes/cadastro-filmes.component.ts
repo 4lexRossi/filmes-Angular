@@ -9,7 +9,7 @@ import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.compone
 import { Alerta } from 'src/app/shared/models/alerta';
 
 @Component({
-  selector: 'dio-cadastro-filmes',
+  selector: 'fpt-cadastro-filmes',
   templateUrl: './cadastro-filmes.component.html',
   styleUrls: ['./cadastro-filmes.component.scss']
 })

@@ -3,13 +3,13 @@
   <mat-card class="center width50" *ngIf="cadastro" >
     <form autocomplete="off" novalidate [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="reiniciarForm()">
       <mat-card-content>
-        <dio-input-text titulo="Título *" controlName="titulo" [formGroup]="cadastro"></dio-input-text>
-        <dio-input-text titulo="Link Foto" controlName="urlFoto" [formGroup]="cadastro"></dio-input-text>
-        <dio-input-date titulo="Data de Lançamento *" controlName="dtLancamento" [formGroup]="cadastro"></dio-input-date>
-        <dio-input-textarea titulo="Descrição" controlName="descricao" [formGroup]="cadastro"></dio-input-textarea>
-        <dio-input-number titulo="Nota IMDb *" controlName="nota" step="0.1" [formGroup]="cadastro"></dio-input-number>
-        <dio-input-text titulo="Link IMDb" controlName="urlIMDb" [formGroup]="cadastro"></dio-input-text>
-        <dio-input-select titulo="Gênero *" [opcoes]="generos" controlName="genero" [formGroup]="cadastro"></dio-input-select>
+        <fpt-input-text titulo="Título *" controlName="titulo" [formGroup]="cadastro"></fpt-input-text>
+        <fpt-input-text titulo="Link Foto" controlName="urlFoto" [formGroup]="cadastro"></fpt-input-text>
+        <fpt-input-date titulo="Data de Lançamento *" controlName="dtLancamento" [formGroup]="cadastro"></fpt-input-date>
+        <fpt-input-textarea titulo="Descrição" controlName="descricao" [formGroup]="cadastro"></fpt-input-textarea>
+        <fpt-input-number titulo="Nota IMDb *" controlName="nota" step="0.1" [formGroup]="cadastro"></fpt-input-number>
+        <fpt-input-text titulo="Link IMDb" controlName="urlIMDb" [formGroup]="cadastro"></fpt-input-text>
+        <fpt-input-select titulo="Gênero *" [opcoes]="generos" controlName="genero" [formGroup]="cadastro"></fpt-input-select>
       </mat-card-content>
       <mat-card-actions>
         <button type="submit" color="accent" mat-raised-button>Salvar</button>

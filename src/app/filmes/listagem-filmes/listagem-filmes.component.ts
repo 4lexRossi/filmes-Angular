@@ -7,7 +7,7 @@ import { Filme } from 'src/app/shared/models/filme';
 import { ConfigPrams } from 'src/app/shared/models/config-prams';
 
 @Component({
-  selector: 'dio-listagem-filmes',
+  selector: 'fpt-listagem-filmes',
   templateUrl: './listagem-filmes.component.html',
   styleUrls: ['./listagem-filmes.component.scss']
 })

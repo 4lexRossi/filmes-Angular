@@ -3,7 +3,7 @@ import { FormGroup, AbstractControl } from '@angular/forms';
 import { ValidarCamposService } from '../validar-campos.service';
 
 @Component({
-  selector: 'dio-input-date',
+  selector: 'fpt-input-date',
   templateUrl: './input-date.component.html',
   styleUrls: ['./input-date.component.css']
 })

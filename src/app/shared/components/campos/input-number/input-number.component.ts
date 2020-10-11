@@ -3,7 +3,7 @@ import { FormGroup, AbstractControl } from '@angular/forms';
 import { ValidarCamposService } from '../validar-campos.service';
 
 @Component({
-  selector: 'dio-input-number',
+  selector: 'fpt-input-number',
   templateUrl: './input-number.component.html',
   styleUrls: ['./input-number.component.css']
 })

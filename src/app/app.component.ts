@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'dio-root',
+  selector: 'fpt-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
