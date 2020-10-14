@@ -39,7 +39,7 @@ export class CadastroFilmesComponent implements OnInit {
       this.criarFormulario(this.criarFilmeEmBranco());
     }
 
-    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Aventura', 'Drama'];
+    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama'];
 
   }
 
@@ -64,7 +64,7 @@ export class CadastroFilmesComponent implements OnInit {
 
   private criarFormulario(filme: Filme): void {
     this.cadastro = this.fb.group({
-      titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
+      titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
       dtLancamento: [filme.dtLancamento, [Validators.required]],
       descricao: [filme.descricao],

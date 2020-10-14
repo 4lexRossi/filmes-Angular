@@ -11,7 +11,7 @@ Execute `ng serve` para que o projeto suba localmente. Acesse a url `http://loca
 
 ## Simulando o Back-end
 
-Execute `npm install -g json-server` para instalar globalmente o servidor json. Após a instalação entre na pasta do projeto e execute `json-server --watch db.json`, com isso um servidor será inicializado na url `http://localhost:3000/`, após a inicialização sera possível realizar requisições http.
+Execute `npm install -g json-server` para instalar globalmente o servidor json. Após a instalação, na pasta do projeto, execute `json-server --watch db.json`, com isso um servidor será inicializado na url `http://localhost:3000/`, após a inicialização sera possível realizar requisições http.
 
 ## Build
 
