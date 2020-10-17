@@ -32,14 +32,21 @@
       <mat-card-title>{{filme.titulo}}</mat-card-title>
       <mat-card-subtitle>{{filme.genero}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="filme.urlFoto || semFoto" >
-    <mat-card-content>
-      <p class="quebrar-linha">
-        {{filme.descricao || 'Nenhuma descrição informada'}}
-      </p>
-    </mat-card-content>
+    <div id="card-body">
+      <img mat-card-image [src]="filme.urlFoto || semFoto" >
+    </div>
+    <div>
+      <mat-card-content>
+        <p class="quebrar-linha">
+          {{filme.descricao || 'Nenhuma descrição informada'}}
+        </p>
+      </mat-card-content>
+    </div>
     <mat-card-actions>
-      <button color="accent" mat-raised-button (click)="abrir(filme.id)">ABRIR</button>
+      <div class="footer-button">
+        <button color="accent" mat-raised-button (click)="abrir(filme.id)">Saber Mais</button>
+        <button color="primary" mat-raised-button (click)="abrir(filme.id)">Doar</button>
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>
