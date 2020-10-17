@@ -4,7 +4,7 @@
     <mat-nav-list (click)="closeSideNav()">
       <a mat-list-item [routerLink]="['/filmes']">Inicial</a>
       <mat-divider></mat-divider>
-      <a mat-list-item [routerLink]="['/filmes/cadastro']">Cadastrar novo Filme</a>
+      <a mat-list-item [routerLink]="['/filmes/cadastro']">Criar Campanha</a>
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
@@ -22,11 +22,10 @@
     <mat-toolbar color="primary" class="header-toolbar">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSideNav()">
         <mat-icon aria-label="Side nav toggle icon"> menu</mat-icon>
-      </button>
-      <div class="nav-itens" id="nav-itens">      
-        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
-        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
-        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
+      </button>      
+      <div class="nav-itens" id="nav-itens">
+        <img src="../../../../assets/images/logo-fpt.png" style="width: 40px; border-radius: 30px;">&nbsp;&nbsp;&nbsp;
+        <span>#FaculPraTodos</span>&nbsp;&nbsp;&nbsp;        
         <button [routerLink]="['/filmes/cadastro']" type="submit" style="background-color: #028090;" color="#028090" mat-raised-button>Criar Campanha</button>
       </div>      
       <button mat-icon-button [matMenuTriggerFor]="menu">
