@@ -23,7 +23,12 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSideNav()">
         <mat-icon aria-label="Side nav toggle icon"> menu</mat-icon>
       </button>
-      <span>Minha Lista de Filmes</span>
+      <div class="nav-itens" id="nav-itens">      
+        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
+        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
+        <span>Minha Lista de Filmes</span>&nbsp;&nbsp;&nbsp;
+        <button [routerLink]="['/filmes/cadastro']" type="submit" style="background-color: #028090;" color="#028090" mat-raised-button>Criar Campanha</button>
+      </div>      
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
