@@ -4,6 +4,7 @@ import { FilmesModule } from './filmes/filmes.module';
 import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component';
 import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component';
 import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
+import { PreCadastroComponent } from './filmes/pre-cadastro/pre-cadastro.component';
 
 const routes: Routes = [
 
@@ -24,11 +25,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: CadastroFilmesComponent
+            component: PreCadastroComponent
           },
           {
             path: ':id',
-            component: CadastroFilmesComponent
+            component: PreCadastroComponent
           }
         ]
       },
