@@ -10,10 +10,10 @@ import { Alerta } from 'src/app/shared/models/alerta';
 
 @Component({
   selector: 'fpt-cadastro-filmes',
-  templateUrl: './cadastro-filmes.component.html',
-  styleUrls: ['./cadastro-filmes.component.scss']
+  templateUrl: './pre-cadastro.component.html',
+  styleUrls: ['./pre-cadastro.component.scss']
 })
-export class CadastroFilmesComponent implements OnInit {
+export class PreCadastroComponent implements OnInit {
 
   id: number;
   cadastro: FormGroup;
@@ -92,7 +92,7 @@ export class CadastroFilmesComponent implements OnInit {
       const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
-          btnCancelar: 'Cadastrar um novo filme',
+          btnCancelar: 'Cadastrar um novo',
           corBtnCancelar: 'primary',
           possuirBtnFechar: true
         } as Alerta

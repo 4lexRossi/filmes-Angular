@@ -44,11 +44,11 @@ export class ListagemFilmesComponent implements OnInit {
       this.resetarConsulta();
     });
 
-    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama'];
-
-    this.listarFilmes();
+    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    
+    
+    this.listarFilmes();   
   }
-
   onScroll(): void {
     this.listarFilmes();
   }
