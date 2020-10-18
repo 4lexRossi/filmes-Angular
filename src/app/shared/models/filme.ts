@@ -5,6 +5,7 @@ export interface Filme {
   dtLancamento: Date;
   descricao?: string;
   nota: number;
+  valorMensal: number;
   urlIMDb?: string;
   genero: string;
 }

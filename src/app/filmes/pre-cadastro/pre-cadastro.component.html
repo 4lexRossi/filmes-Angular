@@ -10,7 +10,7 @@
           >
         </fpt-input-text>
         <fpt-input-text
-          titulo="Nome Instituição"
+          titulo="Foto"
           controlName="urlFoto"
           [formGroup]="cadastro"
           >
@@ -41,6 +41,13 @@
           [formGroup]="cadastro"
           >
         </fpt-input-number>
+        <fpt-input-number
+          titulo="Valor da Mensalidade *"
+          controlName="valorMensal"          
+          step="0.1"
+          [formGroup]="cadastro"
+          >
+        </fpt-input-number>        
         <fpt-input-text
           titulo="rede social (opcional)" 
           controlName="urlIMDb"
