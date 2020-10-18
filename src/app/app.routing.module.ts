@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FilmesModule } from './filmes/filmes.module';
-import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component';
-import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component';
+import { ListagemCampanhasComponent } from './filmes/campanhas/campanhas.component';
 import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
 import { PreCadastroComponent } from './filmes/pre-cadastro/pre-cadastro.component';
 
@@ -10,15 +9,15 @@ const routes: Routes = [
 
   {
       path: '',
-      redirectTo: 'filmes',
+      redirectTo: 'campanhas',
       pathMatch: 'full'
   },
   {
-    path: 'filmes',
+    path: 'campanhas',
     children: [
       {
         path: '',
-        component: ListagemFilmesComponent
+        component: ListagemCampanhasComponent
       },
       {
         path: 'cadastro',
@@ -40,7 +39,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: '**', redirectTo: 'filmes' },
+  { path: '**', redirectTo: 'campanhas' },
 
 ];
 

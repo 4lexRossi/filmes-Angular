@@ -8,10 +8,10 @@ import { ConfigPrams } from 'src/app/shared/models/config-prams';
 
 @Component({
   selector: 'fpt-listagem-filmes',
-  templateUrl: './listagem-filmes.component.html',
-  styleUrls: ['./listagem-filmes.component.scss']
+  templateUrl: './campanhas.component.html',
+  styleUrls: ['./campanhas.component.scss']
 })
-export class ListagemFilmesComponent implements OnInit {
+export class ListagemCampanhasComponent implements OnInit {
   readonly semFoto = 'https://www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg';
 
   config: ConfigPrams = {
@@ -54,7 +54,7 @@ export class ListagemFilmesComponent implements OnInit {
   }
 
   abrir(id: number): void {
-    this.router.navigateByUrl('/filmes/' + id);
+    this.router.navigateByUrl('/campanhas/' + id);
   }
 
   private listarFilmes(): void {

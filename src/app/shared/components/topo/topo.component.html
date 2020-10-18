@@ -2,9 +2,9 @@
   <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" >
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list (click)="closeSideNav()">
-      <a mat-list-item [routerLink]="['/filmes']">Inicial</a>
+      <a mat-list-item [routerLink]="['/campanhas']">Inicial</a>
       <mat-divider></mat-divider>
-      <a mat-list-item [routerLink]="['/filmes/cadastro']">Criar Campanha</a>
+      <a mat-list-item [routerLink]="['/campanhas/cadastro']">Criar Campanha</a>
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,9 +24,16 @@
         <mat-icon aria-label="Side nav toggle icon"> menu</mat-icon>
       </button>      
       <div class="nav-itens" id="nav-itens">
-        <img src="../../../../assets/images/logo-fpt.png" style="width: 40px; border-radius: 10px;">&nbsp;&nbsp;&nbsp;
-        <span>#FaculPraTodos</span>&nbsp;&nbsp;&nbsp;        
-        <button [routerLink]="['/filmes/cadastro']" type="submit" style="background-color: #028090;" color="#028090" mat-raised-button>Pré Cadastro</button>
+        <a mat-list-item [routerLink]="['/campanhas']">
+        <img src="../../../../assets/images/logo-fpt.png" style="width: 40px; border-radius: 10px;"></a>&nbsp;&nbsp;&nbsp;
+        <span>#FaculPraTodos</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button [routerLink]="['/campanhas/cadastro']" type="submit" style="background-color: #028090;" color="#028090" mat-raised-button>Pré Cadastro</button>
+        <div>
+          <a href="https://www.linkedin.com/in/4lex/" 
+             target="blank">
+             <img src="../../../../assets/images/linkedin-icon.png"
+             style="width: 40px; margin-left: 20px; align-self: center;"></a>
+        </div>
       </div>      
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
