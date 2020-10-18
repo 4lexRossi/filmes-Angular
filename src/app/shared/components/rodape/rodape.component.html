@@ -1,5 +1,26 @@
 <footer class="primary">
-  <div layout="row" layout-align="center center">
-      <a href="https://www.linkedin.com/in/4lex/" target="blank"><h3>Alex Rossi</h3></a>
+  <div style="display: flex; flex-direction: row; align-items: center;">
+    <div>
+      <a mat-list-item [routerLink]="['/campanhas']">
+      <img src="../../../../assets/images/logo-fpt.png"
+          style="width: 40px; border-radius: 10px; margin-right: 25px; align-self: center;"></a>
+    </div>
+    <div>
+      <h1 style="margin-right: 25px;">#FaculPraTodos</h1>
+    </div>
+    <div>
+      <button [routerLink]="['/campanhas/cadastro']"
+              type="submit"
+              style="background-color: #028090; margin-right: 25px;"
+              mat-raised-button>Pré Cadastro</button>
+    </div>
+    <div>
+      <a href="https://www.linkedin.com/in/4lex/" 
+         target="blank">
+         <img src="../../../../assets/images/linkedin-icon.png"
+         style="width: 40px; align-self: center;"></a>
+    </div>
+     
+     
   </div>
 </footer>
