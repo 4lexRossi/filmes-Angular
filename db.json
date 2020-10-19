@@ -7,6 +7,7 @@
       "dtLancamento": "1997-07-11T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 7.3,
+      "valorMensal": 739,
       "urlIMDb": "https://www.imdb.com/title/tt0119654/",
       "genero": "Jornalismo"
     },
@@ -17,6 +18,7 @@
       "dtLancamento": "2012-07-19T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.2,
+      "valorMensal": 629,
       "urlIMDb": "https://www.imdb.com/title/tt0120912",
       "genero": "Tecnologia da Informação"
     },
@@ -27,6 +29,7 @@
       "dtLancamento": "2012-25-11T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.8,
+      "valorMensal": 289,
       "urlIMDb": "https://www.imdb.com/title/tt1409024/",
       "genero": "Humanas"
     },
@@ -37,6 +40,7 @@
       "dtLancamento": "2019-13-11T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 5.6,
+      "valorMensal": 1.199,
       "urlIMDb": "https://www.imdb.com/title/tt2283336/",
       "genero": "Direito"
     },
@@ -47,6 +51,7 @@
       "dtLancamento": "2019-10-03T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 8.7,
+      "valorMensal": 1.249,
       "urlIMDb": "https://www.imdb.com/title/tt7286456/",
       "genero": "Humanas"
     },
@@ -57,18 +62,20 @@
       "dtLancamento": "2019-04-25T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 8.5,
+      "valorMensal": 289,
       "urlIMDb": "https://www.imdb.com/title/tt4154796/",
       "genero": "Humanas"
     },
     {
-      "id": 7,
       "titulo": "Sou Bruna, quero ser cineasta",
       "urlFoto": "https://imgur.com/60TJny9.jpg",
       "dtLancamento": "2019-03-07T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsunloren ipsun loren ipsun loren ipsun  ",
       "nota": 6.9,
+      "valorMensal": 499,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
-      "genero": "Cinema"
+      "genero": "Cinema",
+      "id": 7
     },
     {
       "id": 8,
@@ -77,6 +84,7 @@
       "dtLancamento": "2019-04-04T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 7.1,
+      "valorMensal": 710,
       "urlIMDb": "https://www.imdb.com/title/tt0448115/",
       "genero": "Tecnologia da Informação"
     },
@@ -87,6 +95,7 @@
       "dtLancamento": "2019-05-16T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 7.5,
+      "valorMensal": 1.015,
       "urlIMDb": "https://www.imdb.com/title/tt6146586/",
       "genero": "Biologia"
     },
@@ -96,6 +105,7 @@
       "dtLancamento": "2019-06-14T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.1,
+      "valorMensal": 175,
       "urlIMDb": "https://www.imdb.com/title/tt1618434/",
       "genero": "Exatas",
       "id": 10
@@ -106,6 +116,7 @@
       "dtLancamento": "2019-12-19T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.9,
+      "valorMensal": 419,
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Marketing",
       "id": 11
@@ -116,9 +127,21 @@
       "dtLancamento": "2019-12-19T03:00:00.000Z",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.9,
+      "valorMensal": 300,
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Marketing",
       "id": 11
+    },
+    {
+      "titulo": "Alexsander Rossi",
+      "urlFoto": "https://imgur.com/R6MwJCa.jpg",
+      "dtLancamento": "2022-06-14T03:00:00.000Z",
+      "descricao": "Fam Sistemas para internet Fam Sistemas para internetFam Sistemas para internetFam Sistemas para internet",
+      "nota": 10,
+      "valorMensal": 150,
+      "urlIMDb": "https://www.linkedin.com/in/4lex/",
+      "genero": "Jornalismo",
+      "id": 12
     }
   ]
 }

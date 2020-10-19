@@ -18,6 +18,7 @@ export class PreCadastroComponent implements OnInit {
   id: number;
   cadastro: FormGroup;
   generos: Array<string>;
+  valorMensal: number;
 
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
@@ -69,6 +70,7 @@ export class PreCadastroComponent implements OnInit {
       dtLancamento: [filme.dtLancamento, [Validators.required]],
       descricao: [filme.descricao],
       nota: [filme.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
+      valorMensal: [filme.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
       urlIMDb: [filme.urlIMDb, [Validators.minLength(10)]],
       genero: [filme.genero, [Validators.required]]
     });
@@ -82,6 +84,7 @@ export class PreCadastroComponent implements OnInit {
       urlFoto: null,
       descricao: null,
       nota: null,
+      valorMensal: null,
       urlImdb: null,
       genero: null
     } as Filme;
