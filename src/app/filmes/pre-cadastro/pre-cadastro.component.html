@@ -5,22 +5,29 @@
       <mat-card-content>
         <fpt-input-text
           titulo="Nome *"
-          controlName="titulo"
+          controlName="nome"
           [formGroup]="cadastro"
           >
         </fpt-input-text>
         <fpt-input-text
-          titulo="Foto"
-          controlName="urlFoto"
+          titulo="Sobrenome"
+          controlName="sobrenome"
           [formGroup]="cadastro"
           >
         </fpt-input-text>
         <fpt-input-date
-          titulo="Previsão de graduação *"
-          controlName="dtLancamento"
+          titulo="Data Nascimento *"
+          controlName="dataNascimento"
           [formGroup]="cadastro"
           >
         </fpt-input-date>
+        <fpt-input-select
+          titulo="Sexo *"
+          [opcoes]="sexo"
+          controlName="sexo"
+          [formGroup]="cadastro"
+          >
+        </fpt-input-select>
         <fpt-input-select
           titulo="Area Curso *"
           [opcoes]="generos"

@@ -7,6 +7,7 @@ import { Filme } from 'src/app/shared/models/filme';
 import { FilmesService } from 'src/app/core/filmes.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
+import { PreCadastrosService } from 'src/app/core/preCadastro.service';
 
 @Component({
   selector: 'fpt-cadastro-filmes',
@@ -24,6 +25,7 @@ export class PreCadastroComponent implements OnInit {
               public dialog: MatDialog,
               private fb: FormBuilder,
               private filmeService: FilmesService,
+              private _preCadastroService: PreCadastrosService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
@@ -65,9 +67,12 @@ export class PreCadastroComponent implements OnInit {
 
   private criarFormulario(filme: Filme): void {
     this.cadastro = this.fb.group({
-      titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
-      urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
-      dtLancamento: [filme.dtLancamento, [Validators.required]],
+      nome: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
+      sobrenome: [filme.urlFoto, [Validators.minLength(10)]],
+      dataNascimento: [filme.dataNascimento, [Validators.required]],
+      sexo: [filme.sexo],
+      descricao: [filme.descricao],
+      descricao: [filme.descricao],
       descricao: [filme.descricao],
       nota: [filme.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
       valorMensal: [filme.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],

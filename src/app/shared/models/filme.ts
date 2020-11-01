@@ -1,11 +1,14 @@
 export interface Filme {
   id?: number;
-  titulo: string;
-  urlFoto?: string;
-  dtLancamento: Date;
+  nome: string;
+  sobrenome?: string;
+  dataNascimento: Date;
+  sexo?: string;
+  email?: string;
+  curso?: string;  
+  areaCurso: string;
+  semestre: number;
   descricao?: string;
-  nota: number;
   valorMensal: number;
-  urlIMDb?: string;
-  genero: string;
+  tipoUsuario?: string;
 }
