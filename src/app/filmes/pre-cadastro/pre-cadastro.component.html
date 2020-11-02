@@ -1,66 +1,77 @@
 <mat-toolbar class="app-title">Pré Cadastro</mat-toolbar>
 <div class="main-div">
-  <mat-card class="center width50" *ngIf="cadastro" >
-    <form autocomplete="off" novalidate [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="reiniciarForm()">
+  <mat-card class="center width50" *ngIf="preCadastro" >
+    <form autocomplete="off" novalidate [formGroup]="preCadastro" (ngSubmit)="submit()" (ngReset)="reiniciarForm()">
       <mat-card-content>
         <fpt-input-text
           titulo="Nome *"
           controlName="nome"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
         </fpt-input-text>
         <fpt-input-text
           titulo="Sobrenome"
           controlName="sobrenome"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
         </fpt-input-text>
         <fpt-input-date
           titulo="Data Nascimento *"
           controlName="dataNascimento"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
         </fpt-input-date>
         <fpt-input-select
           titulo="Sexo *"
           [opcoes]="sexo"
           controlName="sexo"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
         </fpt-input-select>
+        <fpt-input-text
+          titulo="Email *" 
+          controlName="email"
+          [formGroup]="preCadastro"
+          >
+        </fpt-input-text>
+        <fpt-input-text
+          titulo="Nome curso" 
+          controlName="curso"
+          [formGroup]="preCadastro"
+          >
+        </fpt-input-text>
         <fpt-input-select
           titulo="Area Curso *"
-          [opcoes]="generos"
-          controlName="genero"
-          [formGroup]="cadastro"
+          [opcoes]="areaCurso"
+          controlName="areaCurso"
+          [formGroup]="preCadastro"
           >
         </fpt-input-select>
+        <fpt-input-number
+          titulo="Semestre"
+          controlName="semestre"          
+          [formGroup]="preCadastro"
+          >
+        </fpt-input-number> 
         <fpt-input-textarea
           titulo="Sobre o curso"
           controlName="descricao"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
-        </fpt-input-textarea>
-        <fpt-input-number
-          titulo="Nota para seu curso *"
-          controlName="nota"
-          step="0.1"
-          [formGroup]="cadastro"
-          >
-        </fpt-input-number>
+        </fpt-input-textarea>       
         <fpt-input-number
           titulo="Valor da Mensalidade *"
           controlName="valorMensal"          
-          step="0.1"
-          [formGroup]="cadastro"
+          [formGroup]="preCadastro"
           >
         </fpt-input-number>        
-        <fpt-input-text
-          titulo="rede social (opcional)" 
-          controlName="urlIMDb"
-          [formGroup]="cadastro"
+        <fpt-input-select
+          titulo="Estudante ou Doador *"
+          [opcoes]="tipoUsuario"
+          controlName="tipoUsuario"
+          [formGroup]="preCadastro"
           >
-        </fpt-input-text>
+        </fpt-input-select>
         
       </mat-card-content>
       <mat-card-actions>

@@ -30,18 +30,27 @@ const routes: Routes = [
           {
             path: ':id',
             component: CriarCampanhaComponent
-          },
-          {
-            path: '',
-            component: PreCadastroComponent
-          },
-          {
-            path: ':id',
-            component: PreCadastroComponent
           }
         ]
       },
       {
+        path: '',
+        component: ListagemCampanhasComponent
+      },
+      {
+        path: 'pre-cadastro',
+        children: [
+        {
+          path: '',
+          component: PreCadastroComponent
+        },
+        {
+          path: ':id',
+          component: PreCadastroComponent
+        }
+      ]
+    },
+    {
         path: ':id',
         component: VisualizarFilmesComponent,
         pathMatch: 'full'

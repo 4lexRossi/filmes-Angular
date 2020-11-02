@@ -18,7 +18,7 @@ export class CriarCampanhaComponent implements OnInit {
   id: number;
   criarCampanha: FormGroup;
   generos: Array<string>;
-  valorMensal: number;
+  valorMensal: number; 
 
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
@@ -35,9 +35,9 @@ export class CriarCampanhaComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
     if (this.id) {
       this.filmeService.visualizar(this.id)
-        .subscribe((filme: Filme) => this.criarFormulario(filme));
+        .subscribe((filme: Filme) => this.createForm(filme));
     } else {
-      this.criarFormulario(this.criarFilmeEmBranco());
+      this.createForm(this.createBlankForm());
     }
 
     this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
@@ -59,11 +59,11 @@ export class CriarCampanhaComponent implements OnInit {
     }
   }
 
-  reiniciarForm(): void {
+  resetForm(): void {
     this.criarCampanha.reset();
   }
 
-  private criarFormulario(filme: Filme): void {
+  private createForm(filme: Filme): void {
     this.criarCampanha = this.fb.group({
       titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
@@ -76,7 +76,7 @@ export class CriarCampanhaComponent implements OnInit {
     });
   }
 
-  private criarFilmeEmBranco(): Filme {
+  private createBlankForm(): Filme {
     return {
       id: null,
       titulo: null,
@@ -105,7 +105,7 @@ export class CriarCampanhaComponent implements OnInit {
         if (opcao) {
           this.router.navigateByUrl('filmes');
         } else {
-          this.reiniciarForm();
+          this.resetForm();
         }
       });
     },

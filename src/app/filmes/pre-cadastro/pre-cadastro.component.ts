@@ -11,7 +11,7 @@ import { Alerta } from 'src/app/shared/models/alerta';
 import { PreCadastrosService } from 'src/app/core/preCadastros.service';
 
 @Component({
-  selector: 'fpt-cadastro-filmes',
+  selector: 'fpt-pre-cadastro-filmes',
   templateUrl: './pre-cadastro.component.html',
   styleUrls: ['./pre-cadastro.component.scss']
 })
@@ -19,16 +19,17 @@ export class PreCadastroComponent implements OnInit {
 
   id: number;
   preCadastro: FormGroup;
-  generos: Array<string>;
-  valorMensal: number;
+  areaCurso: Array<string>;
+  tipoUsuario: Array<string>;
+  sexo: Array<string>;
 
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
               private fb: FormBuilder,
-              private filmeService: FilmesService,
               private _preCadastroService: PreCadastrosService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) {                
+              }
 
   get f() {
     return this.preCadastro.controls;
@@ -43,7 +44,11 @@ export class PreCadastroComponent implements OnInit {
       this.criarFormulario(this.createBlankForm());
     }
 
-    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    this.sexo = ['masculino', 'feminino', 'prefiro não opinar']
+
+    this.areaCurso = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    
+    this.tipoUsuario = ['Estudante', 'Doador'];
 
   }
 
@@ -72,13 +77,13 @@ export class PreCadastroComponent implements OnInit {
       sobrenome: [preCadastro.sobrenome, [Validators.minLength(10)]],
       dataNascimento: [preCadastro.dataNascimento, [Validators.required]],
       sexo: [preCadastro.sexo],
-      email: [preCadastro.email],
+      email: [preCadastro.email, [Validators.required]],
       curso: [preCadastro.curso],
       areaCurso: [preCadastro.areaCurso],
       semestre: [preCadastro.semestre],
       descricao: [preCadastro.descricao],
-      valorMensal: [preCadastro.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
-      tipoUsuario: [preCadastro.tipoUsuario, [Validators.minLength(10)]],
+      valorMensal: [preCadastro.valorMensal, [Validators.required, Validators.min(0)]],
+      tipoUsuario: [preCadastro.tipoUsuario, [Validators.required]],
     });
   }
 
