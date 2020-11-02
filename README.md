@@ -1,6 +1,6 @@
 ## Instalação
 
-1. clone o repositório `git clone `
+1. clone o repositório `git clone https://github.com/4lexRossi/movies-angular.git`
 2. Entre no projeto e instale as dependencias `npm install`
 
 ## Ambiente Local
