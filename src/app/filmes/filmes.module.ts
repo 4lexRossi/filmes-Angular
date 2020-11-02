@@ -8,8 +8,8 @@ import { MaterialModule } from '../shared/material/material.module';
 import { ListagemCampanhasComponent } from './campanhas/campanhas.component';
 import { CamposModule } from '../shared/components/campos/campos.module';
 import { VisualizarFilmesComponent } from './visualizar-filmes/visualizar-filmes.component';
-import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 import { CriarCampanhaComponent } from './visualizar-campanhas/criar-campanha.component';
+import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 
 @NgModule({
   imports: [
