@@ -7,17 +7,16 @@ import { Filme } from 'src/app/shared/models/filme';
 import { FilmesService } from 'src/app/core/filmes.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
-import { PreCadastrosService } from 'src/app/core/preCadastro.service';
 
 @Component({
-  selector: 'fpt-visualizar-campanhas',
-  templateUrl: './visualizar-campanhas.component.html',
-  styleUrls: ['./visualizar-campanhas.component.scss']
+  selector: 'fpt-criar-campanha',
+  templateUrl: './criar-campanha.component.html',
+  styleUrls: ['./criar-campanha.component.scss']
 })
-export class VisualizarCampanhasComponent implements OnInit {
+export class CriarCampanhaComponent implements OnInit {
 
   id: number;
-  cadastro: FormGroup;
+  criarCampanha: FormGroup;
   generos: Array<string>;
   valorMensal: number;
 
@@ -25,12 +24,11 @@ export class VisualizarCampanhasComponent implements OnInit {
               public dialog: MatDialog,
               private fb: FormBuilder,
               private filmeService: FilmesService,
-              private _preCadastroService: PreCadastrosService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
   get f() {
-    return this.cadastro.controls;
+    return this.criarCampanha.controls;
   }
 
   ngOnInit(): void {
@@ -47,12 +45,12 @@ export class VisualizarCampanhasComponent implements OnInit {
   }
 
   submit(): void {
-    this.cadastro.markAllAsTouched();
-    if (this.cadastro.invalid) {
+    this.criarCampanha.markAllAsTouched();
+    if (this.criarCampanha.invalid) {
       return;
     }
 
-    const filme = this.cadastro.getRawValue() as Filme;
+    const filme = this.criarCampanha.getRawValue() as Filme;
     if (this.id) {
       filme.id = this.id;
       this.editar(filme);
@@ -62,11 +60,11 @@ export class VisualizarCampanhasComponent implements OnInit {
   }
 
   reiniciarForm(): void {
-    this.cadastro.reset();
+    this.criarCampanha.reset();
   }
 
   private criarFormulario(filme: Filme): void {
-    this.cadastro = this.fb.group({
+    this.criarCampanha = this.fb.group({
       titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
       dtLancamento: [filme.dtLancamento, [Validators.required]],      
