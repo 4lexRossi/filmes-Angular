@@ -1,8 +1,6 @@
-# Listar Filmes
-
 ## Instalação
 
-1. clone o repositório `git clone git@github.com:RenanRB/curso-angular.git`
+1. clone o repositório `git clone `
 2. Entre no projeto e instale as dependencias `npm install`
 
 ## Ambiente Local

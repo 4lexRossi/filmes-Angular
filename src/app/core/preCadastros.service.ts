@@ -5,7 +5,7 @@ import { ConfigPrams } from '../shared/models/config-prams';
 import { ConfigParamsService } from './config-params.service';
 import { PreCadastro } from '../shared/models/pre-cadastro';
 
-const url = 'http://localhost:3000/preCadastro/';
+const url = 'http://localhost:5000/estudante/';
 
 @Injectable({
   providedIn: 'root'
