@@ -4,10 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 import { Filme } from 'src/app/shared/models/filme';
+import { PreCadastro } from 'src/app/shared/models/pre-cadastro'
 import { FilmesService } from 'src/app/core/filmes.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
-import { PreCadastrosService } from 'src/app/core/preCadastro.service';
+import { PreCadastrosService } from 'src/app/core/preCadastros.service';
 
 @Component({
   selector: 'fpt-cadastro-filmes',
@@ -17,7 +18,7 @@ import { PreCadastrosService } from 'src/app/core/preCadastro.service';
 export class PreCadastroComponent implements OnInit {
 
   id: number;
-  cadastro: FormGroup;
+  preCadastro: FormGroup;
   generos: Array<string>;
   valorMensal: number;
 
@@ -30,16 +31,16 @@ export class PreCadastroComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   get f() {
-    return this.cadastro.controls;
+    return this.preCadastro.controls;
   }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     if (this.id) {
-      this.filmeService.visualizar(this.id)
-        .subscribe((filme: Filme) => this.criarFormulario(filme));
+      this._preCadastroService.visualizar(this.id)
+        .subscribe((preCadastro: PreCadastro) => this.criarFormulario(preCadastro));
     } else {
-      this.criarFormulario(this.criarFilmeEmBranco());
+      this.criarFormulario(this.createBlankForm());
     }
 
     this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
@@ -47,56 +48,59 @@ export class PreCadastroComponent implements OnInit {
   }
 
   submit(): void {
-    this.cadastro.markAllAsTouched();
-    if (this.cadastro.invalid) {
+    this.preCadastro.markAllAsTouched();
+    if (this.preCadastro.invalid) {
       return;
     }
 
-    const filme = this.cadastro.getRawValue() as Filme;
+    const preCadastro = this.preCadastro.getRawValue() as PreCadastro;
     if (this.id) {
-      filme.id = this.id;
-      this.editar(filme);
+      preCadastro.id = this.id;
+      this.editar(preCadastro);
     } else {
-      this.salvar(filme);
+      this.salvar(preCadastro);
     }
   }
 
   reiniciarForm(): void {
-    this.cadastro.reset();
+    this.preCadastro.reset();
   }
 
-  private criarFormulario(filme: Filme): void {
-    this.cadastro = this.fb.group({
-      nome: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
-      sobrenome: [filme.urlFoto, [Validators.minLength(10)]],
-      dataNascimento: [filme.dataNascimento, [Validators.required]],
-      sexo: [filme.sexo],
-      descricao: [filme.descricao],
-      descricao: [filme.descricao],
-      descricao: [filme.descricao],
-      nota: [filme.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
-      valorMensal: [filme.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
-      urlIMDb: [filme.urlIMDb, [Validators.minLength(10)]],
-      genero: [filme.genero, [Validators.required]]
+  private criarFormulario(preCadastro: PreCadastro): void {
+    this.preCadastro = this.fb.group({
+      nome: [preCadastro.nome, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
+      sobrenome: [preCadastro.sobrenome, [Validators.minLength(10)]],
+      dataNascimento: [preCadastro.dataNascimento, [Validators.required]],
+      sexo: [preCadastro.sexo],
+      email: [preCadastro.email],
+      curso: [preCadastro.curso],
+      areaCurso: [preCadastro.areaCurso],
+      semestre: [preCadastro.semestre],
+      descricao: [preCadastro.descricao],
+      valorMensal: [preCadastro.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
+      tipoUsuario: [preCadastro.tipoUsuario, [Validators.minLength(10)]],
     });
   }
 
-  private criarFilmeEmBranco(): Filme {
+  private createBlankForm(): PreCadastro {
     return {
       id: null,
-      titulo: null,
-      dtLancamento: null,
-      urlFoto: null,
+      nome: null,
+      sobrenome: null,
+      dataNascimento: null,
+      sexo: null,
+      email: null,
+      curso: null,
+      areaCurso: null,
+      semestre: null,
       descricao: null,
-      nota: null,
       valorMensal: null,
-      urlImdb: null,
-      genero: null
-    } as Filme;
+      tipoUsuario: null,      
+    } as PreCadastro;
   }
 
-  private salvar(filme: Filme): void {
-    this.filmeService.salvar(filme).subscribe(() => {
+  private salvar(preCadastro: PreCadastro): void {
+    this._preCadastroService.salvar(preCadastro).subscribe(() => {
       const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
@@ -127,8 +131,8 @@ export class PreCadastroComponent implements OnInit {
     });
   }
 
-  private editar(filme: Filme): void {
-    this.filmeService.editar(filme).subscribe(() => {
+  private editar(preCadastro: PreCadastro): void {
+    this._preCadastroService.editar(preCadastro).subscribe(() => {
       const config = {
         data: {
           descricao: 'Seu registro foi atualizado com sucesso!',

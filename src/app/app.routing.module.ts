@@ -4,7 +4,7 @@ import { FilmesModule } from './filmes/filmes.module';
 import { ListagemCampanhasComponent } from './filmes/campanhas/campanhas.component';
 import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
 import { PreCadastroComponent } from './filmes/pre-cadastro/pre-cadastro.component';
-import { VisualizarCampanhasComponent } from './filmes/visualizar-campanhas/visualizar-campanhas.component';
+import { CriarCampanhaComponent } from './filmes/visualizar-campanhas/criar-campanha.component';
 
 const routes: Routes = [
 
@@ -25,11 +25,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: VisualizarCampanhasComponent
+            component: CriarCampanhaComponent
           },
           {
             path: ':id',
-            component: VisualizarCampanhasComponent
+            component: CriarCampanhaComponent
           },
           {
             path: '',
