@@ -9,6 +9,7 @@ import { ListagemCampanhasComponent } from './campanhas/campanhas.component';
 import { CamposModule } from '../shared/components/campos/campos.module';
 import { VisualizarFilmesComponent } from './visualizar-filmes/visualizar-filmes.component';
 import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
+import { VisualizarCampanhasComponent } from './visualizar-campanhas/visualizar-campanhas.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
     InfiniteScrollModule
   ],
   declarations: [
-    
+    VisualizarCampanhasComponent,
     ListagemCampanhasComponent,
     VisualizarFilmesComponent,
     PreCadastroComponent
