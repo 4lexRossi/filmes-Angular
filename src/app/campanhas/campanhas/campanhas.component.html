@@ -14,8 +14,8 @@
       <div class="padding10">
         <fpt-input-select 
         titulo="filtre por áreas de estudo"                          
-        controlName="genero"
-        [opcoes]="generos"
+        controlName="areaCurso"
+        [opcoes]="areaCursos"
         [formGroup]="filtrosListagem"                         
                           >                          
         </fpt-input-select>
@@ -32,7 +32,7 @@
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>{{campanha.titulo}}</mat-card-title>
-      <mat-card-subtitle>{{campanha.genero}}</mat-card-subtitle>
+      <mat-card-subtitle>{{campanha.areaCurso}}</mat-card-subtitle>
     </mat-card-header>
     <div id="card-body">
       <img mat-card-image [src]="campanha.urlFoto || semFoto" >
@@ -49,8 +49,8 @@
     </div>
     <mat-card-actions>
       <div class="footer-button">
-        <button color="accent" mat-raised-button (click)="abrir(filme.id)">Saber Mais</button>
-        <button color="primary" mat-raised-button (click)="abrir(filme.id)">Doar</button>
+        <button color="accent" mat-raised-button (click)="abrir(campanha.id)">Saber Mais</button>
+        <button color="primary" mat-raised-button (click)="abrir(campanha.id)">Doar</button>
       </div>
     </mat-card-actions>
   </mat-card>

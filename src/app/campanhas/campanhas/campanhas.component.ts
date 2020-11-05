@@ -20,7 +20,7 @@ export class ListagemCampanhasComponent implements OnInit {
   };
   campanhas: Campanha[] = [];
   filtrosListagem: FormGroup;
-  generos: Array<string>;
+  areaCursos: Array<string>;
 
   constructor(private campanhaService: CampanhaService,
               private fb: FormBuilder,
@@ -29,7 +29,7 @@ export class ListagemCampanhasComponent implements OnInit {
   ngOnInit(): void {
     this.filtrosListagem = this.fb.group({
       texto: [''],
-      genero: ['']
+      areaCurso: ['']
     });
 
     this.filtrosListagem.get('texto').valueChanges
@@ -39,12 +39,12 @@ export class ListagemCampanhasComponent implements OnInit {
       this.resetarConsulta();
     });
 
-    this.filtrosListagem.get('genero').valueChanges.subscribe((val: string) => {
-      this.config.campo = {tipo: 'genero', valor: val};
+    this.filtrosListagem.get('areaCurso').valueChanges.subscribe((val: string) => {
+      this.config.campo = {tipo: 'areaCurso', valor: val};
       this.resetarConsulta();
     });
 
-    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    this.areaCursos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
     
     
     this.listarCampanhas();   

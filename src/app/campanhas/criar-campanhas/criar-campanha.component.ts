@@ -17,7 +17,7 @@ export class CriarCampanhaComponent implements OnInit {
 
   id: number;
   criarCampanha: FormGroup;
-  generos: Array<string>;
+  areaCursos: Array<string>;
   valorMensal: number; 
 
   constructor(public validacao: ValidarCamposService,
@@ -40,7 +40,7 @@ export class CriarCampanhaComponent implements OnInit {
       this.createForm(this.createBlankForm());
     }
 
-    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    this.areaCursos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
 
   }
 
@@ -68,7 +68,7 @@ export class CriarCampanhaComponent implements OnInit {
       titulo: [campanha.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       urlFoto: [campanha.urlFoto, [Validators.minLength(10)]],
       dtLancamento: [campanha.dtLancamento, [Validators.required]],      
-      genero: [campanha.genero, [Validators.required]],
+      genero: [campanha.areaCurso, [Validators.required]],
       descricao: [campanha.descricao],      
       nota: [campanha.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
       valorMensal: [campanha.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
@@ -82,7 +82,7 @@ export class CriarCampanhaComponent implements OnInit {
       titulo: null,
       urlFoto: null,
       dtLancamento: null,
-      genero: null,
+      areaCurso: null,
       descricao: null,
       nota: null,
       valorMensal: null,
