@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { FilmesService } from 'src/app/core/filmes.service';
-import { Filme } from 'src/app/shared/models/filme';
+import { CampanhaService } from 'src/app/core/campanhas.service';
+import { Campanha } from 'src/app/shared/models/campanha';
 import { Alerta } from 'src/app/shared/models/alerta';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 
@@ -13,13 +13,13 @@ import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.compone
 })
 export class VisualizarFilmesComponent implements OnInit {
   readonly semFoto = 'https://www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg';
-  filme: Filme;
+  campanha: Campanha;
   id: number;
 
   constructor(public dialog: MatDialog,
               private activatedRoute: ActivatedRoute,
               private router: Router,
-              private filmesService: FilmesService) { }
+              private campanhaService: CampanhaService) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
@@ -43,14 +43,14 @@ export class VisualizarFilmesComponent implements OnInit {
     const dialogRef = this.dialog.open(AlertaComponent, config);
     dialogRef.afterClosed().subscribe((opcao: boolean) => {
       if (opcao) {
-        this.filmesService.excluir(this.id)
-        .subscribe(() => this.router.navigateByUrl('/filmes'));
+        this.campanhaService.excluir(this.id)
+        .subscribe(() => this.router.navigateByUrl('/listar-campanhas'));
       }
     });
   }
 
   private visualizar(): void {
-    this.filmesService.visualizar(this.id).subscribe((filme: Filme) => this.filme = filme);
+    this.campanhaService.visualizar(this.id).subscribe((campanha: Campanha) => this.campanha = campanha);
   }
 
 }

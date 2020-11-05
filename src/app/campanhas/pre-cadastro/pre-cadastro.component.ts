@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
-import { Filme } from 'src/app/shared/models/filme';
+import { Campanha } from 'src/app/shared/models/campanha';
 import { PreCadastro } from 'src/app/shared/models/pre-cadastro'
-import { FilmesService } from 'src/app/core/filmes.service';
+import { CampanhaService } from 'src/app/core/campanhas.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
 import { PreCadastrosService } from 'src/app/core/preCadastros.service';

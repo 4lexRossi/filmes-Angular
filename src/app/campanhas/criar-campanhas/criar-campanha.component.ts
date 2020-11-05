@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
-import { Filme } from 'src/app/shared/models/filme';
-import { FilmesService } from 'src/app/core/filmes.service';
+import { Campanha } from 'src/app/shared/models/campanha';
+import { CampanhaService } from 'src/app/core/campanhas.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
 
@@ -23,7 +23,7 @@ export class CriarCampanhaComponent implements OnInit {
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
               private fb: FormBuilder,
-              private filmeService: FilmesService,
+              private campanhaService: CampanhaService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
@@ -34,8 +34,8 @@ export class CriarCampanhaComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     if (this.id) {
-      this.filmeService.visualizar(this.id)
-        .subscribe((filme: Filme) => this.createForm(filme));
+      this.campanhaService.visualizar(this.id)
+        .subscribe((campanha: Campanha) => this.createForm(campanha));
     } else {
       this.createForm(this.createBlankForm());
     }
@@ -50,12 +50,12 @@ export class CriarCampanhaComponent implements OnInit {
       return;
     }
 
-    const filme = this.criarCampanha.getRawValue() as Filme;
+    const campanha = this.criarCampanha.getRawValue() as Campanha;
     if (this.id) {
-      filme.id = this.id;
-      this.editar(filme);
+      campanha.id = this.id;
+      this.editar(campanha);
     } else {
-      this.salvar(filme);
+      this.salvar(campanha);
     }
   }
 
@@ -63,20 +63,20 @@ export class CriarCampanhaComponent implements OnInit {
     this.criarCampanha.reset();
   }
 
-  private createForm(filme: Filme): void {
+  private createForm(campanha: Campanha): void {
     this.criarCampanha = this.fb.group({
-      titulo: [filme.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
-      urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
-      dtLancamento: [filme.dtLancamento, [Validators.required]],      
-      genero: [filme.genero, [Validators.required]],
-      descricao: [filme.descricao],      
-      nota: [filme.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
-      valorMensal: [filme.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
-      urlIMDb: [filme.urlIMDb, [Validators.minLength(10)]],
+      titulo: [campanha.titulo, [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
+      urlFoto: [campanha.urlFoto, [Validators.minLength(10)]],
+      dtLancamento: [campanha.dtLancamento, [Validators.required]],      
+      genero: [campanha.genero, [Validators.required]],
+      descricao: [campanha.descricao],      
+      nota: [campanha.nota, [Validators.required, Validators.min(0), Validators.max(10)]],
+      valorMensal: [campanha.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
+      urlIMDb: [campanha.urlIMDb, [Validators.minLength(10)]],
     });
   }
 
-  private createBlankForm(): Filme {
+  private createBlankForm(): Campanha {
     return {
       id: null,
       titulo: null,
@@ -87,11 +87,11 @@ export class CriarCampanhaComponent implements OnInit {
       nota: null,
       valorMensal: null,
       urlImdb: null
-    } as Filme;
+    } as Campanha;
   }
 
-  private salvar(filme: Filme): void {
-    this.filmeService.salvar(filme).subscribe(() => {
+  private salvar(campanha: Campanha): void {
+    this.campanhaService.salvar(campanha).subscribe(() => {
       const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
@@ -122,8 +122,8 @@ export class CriarCampanhaComponent implements OnInit {
     });
   }
 
-  private editar(filme: Filme): void {
-    this.filmeService.editar(filme).subscribe(() => {
+  private editar(campanha: Campanha): void {
+    this.campanhaService.editar(campanha).subscribe(() => {
       const config = {
         data: {
           descricao: 'Seu registro foi atualizado com sucesso!',

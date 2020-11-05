@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FilmesModule } from './filmes/filmes.module';
-import { ListagemCampanhasComponent } from './filmes/campanhas/campanhas.component';
-import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
-import { PreCadastroComponent } from './filmes/pre-cadastro/pre-cadastro.component';
-import { CriarCampanhaComponent } from './filmes/visualizar-campanhas/criar-campanha.component';
+import { FilmesModule } from './campanhas/filmes.module';
+import { ListagemCampanhasComponent } from './campanhas/campanhas/campanhas.component';
+import { VisualizarFilmesComponent } from './campanhas/visualizar-filmes/visualizar-filmes.component';
+import { PreCadastroComponent } from './campanhas/pre-cadastro/pre-cadastro.component';
+import { CriarCampanhaComponent } from './campanhas/criar-campanhas/criar-campanha.component';
 
 const routes: Routes = [
 
