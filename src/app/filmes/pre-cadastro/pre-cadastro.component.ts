@@ -9,6 +9,8 @@ import { FilmesService } from 'src/app/core/filmes.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
 import { PreCadastrosService } from 'src/app/core/preCadastros.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'fpt-pre-cadastro-filmes',
@@ -22,13 +24,15 @@ export class PreCadastroComponent implements OnInit {
   areaCurso: Array<string>;
   tipoUsuario: Array<string>;
   sexo: Array<string>;
-
+  private ngGetUsuarioUnsubscribe = new Subject();
+  
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
               private fb: FormBuilder,
               private _preCadastroService: PreCadastrosService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {                
+              private activatedRoute: ActivatedRoute) {  
+                              
               }
 
   get f() {
@@ -106,7 +110,11 @@ export class PreCadastroComponent implements OnInit {
 
   private salvar(preCadastro: PreCadastro): void {
     this._preCadastroService.salvar(preCadastro).subscribe(() => {
-      const config = {
+      this._preCadastroService.salvar(preCadastro)
+      .pipe(takeUntil(this.ngGetUsuarioUnsubscribe))
+      .subscribe(_ => {
+        const data = _;        
+        const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
           btnCancelar: 'Cadastrar um novo',
@@ -133,8 +141,9 @@ export class PreCadastroComponent implements OnInit {
         } as Alerta
       };
       this.dialog.open(AlertaComponent, config);
-    });
-  }
+      });
+    }
+  )}
 
   private editar(preCadastro: PreCadastro): void {
     this._preCadastroService.editar(preCadastro).subscribe(() => {

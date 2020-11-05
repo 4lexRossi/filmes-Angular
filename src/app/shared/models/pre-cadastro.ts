@@ -12,3 +12,13 @@ export interface PreCadastro {
   valorMensal: number;
   tipoUsuario?: string;
 }
+export interface Usuario {
+  id: string;
+  nome: string;
+  sobreNome: string;
+  dataNascimento: string;
+  email: string;
+  senha: string;
+  eTipoUsuario: number;
+
+}

@@ -1,22 +1,39 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ConfigPrams } from '../shared/models/config-prams';
 import { ConfigParamsService } from './config-params.service';
 import { PreCadastro } from '../shared/models/pre-cadastro';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
-const url = 'http://localhost:5000/estudante/';
+
+const options = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+const url = 'http://localhost:5001/estudante/';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PreCadastrosService {
 
-  constructor(private http: HttpClient,
+  constructor(private http: HttpClient,              
               private configService: ConfigParamsService) { }
 
-  salvar(preCadastro: PreCadastro): Observable<PreCadastro> {
-    return this.http.post<PreCadastro>(url, preCadastro);
+
+  salvar(preCadastro: PreCadastro): Observable<any> {
+    
+      return this.http.post(`${environment.apiUrl}/estudante`, preCadastro, options)
+      .pipe(tap(data => { data }))
+    
+  }
+
+  deletar(id: string) {
+    return this.http.delete(`${environment.apiUrl}/estudante/${id}`, options)
+
   }
 
   editar(preCadastro: PreCadastro): Observable<PreCadastro> {
@@ -35,4 +52,5 @@ export class PreCadastrosService {
   excluir(id: number): Observable<void> {
     return this.http.delete<void>(url + id);
   }
+
 }
