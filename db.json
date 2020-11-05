@@ -9,7 +9,7 @@
       "nota": 7.3,
       "valorMensal": 739,
       "urlIMDb": "https://www.imdb.com/title/tt0119654/",
-      "genero": "Jornalismo"
+      "areaCurso": "Jornalismo"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "nota": 6.2,
       "valorMensal": 629,
       "urlIMDb": "https://www.imdb.com/title/tt0120912",
-      "genero": "Tecnologia da Informação"
+      "areaCurso": "Tecnologia da Informação"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "nota": 6.8,
       "valorMensal": 289,
       "urlIMDb": "https://www.imdb.com/title/tt1409024/",
-      "genero": "Humanas"
+      "areaCurso": "Humanas"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "nota": 5.6,
       "valorMensal": 1.199,
       "urlIMDb": "https://www.imdb.com/title/tt2283336/",
-      "genero": "Direito"
+      "areaCurso": "Direito"
     },
     {
       "id": 5,
@@ -53,7 +53,7 @@
       "nota": 8.7,
       "valorMensal": 1.249,
       "urlIMDb": "https://www.imdb.com/title/tt7286456/",
-      "genero": "Humanas"
+      "areaCurso": "Humanas"
     },
     {
       "id": 6,
@@ -64,7 +64,7 @@
       "nota": 8.5,
       "valorMensal": 289,
       "urlIMDb": "https://www.imdb.com/title/tt4154796/",
-      "genero": "Humanas"
+      "areaCurso": "Humanas"
     },
     {
       "titulo": "Sou Bruna, quero ser cineasta",
@@ -74,7 +74,7 @@
       "nota": 6.9,
       "valorMensal": 499,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
-      "genero": "Cinema",
+      "areaCurso": "Cinema",
       "id": 7
     },
     {
@@ -86,7 +86,7 @@
       "nota": 7.1,
       "valorMensal": 710,
       "urlIMDb": "https://www.imdb.com/title/tt0448115/",
-      "genero": "Tecnologia da Informação"
+      "areaCurso": "Tecnologia da Informação"
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
       "nota": 7.5,
       "valorMensal": 1.015,
       "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genero": "Biologia"
+      "areaCurso": "Biologia"
     },
     {
       "titulo": "Sou Joshua, e curso administração",
@@ -107,14 +107,14 @@
       "nota": 6.1,
       "valorMensal": 175,
       "urlIMDb": "https://www.imdb.com/title/tt1618434/",
-      "genero": "Exatas",
+      "areaCurso": "Exatas",
       "id": 10
     },
     {
       "titulo": "Quero ser publicitária",
       "urlFoto": "https://imgur.com/dSWsTSK.jpg",
       "dtLancamento": "2019-12-19T03:00:00.000Z",
-      "genero": "Marketing",
+      "areaCurso": "Marketing",
       "descricao": "loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun loren ipsun ",
       "nota": 6.9,
       "valorMensal": 419,
@@ -129,19 +129,8 @@
       "nota": 6.9,
       "valorMensal": 300,
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
-      "genero": "Marketing",
+      "areaCurso": "Marketing",
       "id": 11
-    },
-    {
-      "titulo": "Alexsander Rossi",
-      "urlFoto": "https://imgur.com/R6MwJCa.jpg",
-      "dtLancamento": "2022-06-14T03:00:00.000Z",
-      "genero": "Tecnologia da Informação",
-      "descricao": "Fam Sistemas para internet Fam Sistemas para internetFam Sistemas para internetFam Sistemas para internet",
-      "nota": 10,
-      "valorMensal": 150,
-      "urlIMDb": "https://www.linkedin.com/in/4lex/",
-      "id": 12
     }
   ]
 }

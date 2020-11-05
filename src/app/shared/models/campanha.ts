@@ -3,7 +3,7 @@ export interface Campanha {
   titulo: string;
   urlFoto?: string;
   dtLancamento: Date; 
-  genero: string;  
+  areaCurso: string;  
   descricao?: string;
   nota: number;
   valorMensal: number;
