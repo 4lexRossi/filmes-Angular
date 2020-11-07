@@ -3,15 +3,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
-import { Filme } from 'src/app/shared/models/filme';
+import { Campanha } from 'src/app/shared/models/campanha';
 import { PreCadastro } from 'src/app/shared/models/pre-cadastro'
-import { FilmesService } from 'src/app/core/filmes.service';
+import { CampanhaService } from 'src/app/core/campanhas.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { Alerta } from 'src/app/shared/models/alerta';
 import { PreCadastrosService } from 'src/app/core/preCadastros.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'fpt-cadastro-filmes',
+  selector: 'fpt-pre-cadastro-filmes',
   templateUrl: './pre-cadastro.component.html',
   styleUrls: ['./pre-cadastro.component.scss']
 })
@@ -19,16 +21,19 @@ export class PreCadastroComponent implements OnInit {
 
   id: number;
   preCadastro: FormGroup;
-  generos: Array<string>;
-  valorMensal: number;
-
+  areaCurso: Array<string>;
+  tipoUsuario: Array<string>;
+  sexo: Array<string>;
+  private ngGetUsuarioUnsubscribe = new Subject();
+  
   constructor(public validacao: ValidarCamposService,
               public dialog: MatDialog,
               private fb: FormBuilder,
-              private filmeService: FilmesService,
               private _preCadastroService: PreCadastrosService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) {  
+                              
+              }
 
   get f() {
     return this.preCadastro.controls;
@@ -43,7 +48,11 @@ export class PreCadastroComponent implements OnInit {
       this.criarFormulario(this.createBlankForm());
     }
 
-    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    this.sexo = ['masculino', 'feminino', 'prefiro não opinar']
+
+    this.areaCurso = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    
+    this.tipoUsuario = ['Estudante', 'Doador'];
 
   }
 
@@ -72,13 +81,13 @@ export class PreCadastroComponent implements OnInit {
       sobrenome: [preCadastro.sobrenome, [Validators.minLength(10)]],
       dataNascimento: [preCadastro.dataNascimento, [Validators.required]],
       sexo: [preCadastro.sexo],
-      email: [preCadastro.email],
+      email: [preCadastro.email, [Validators.required]],
       curso: [preCadastro.curso],
       areaCurso: [preCadastro.areaCurso],
       semestre: [preCadastro.semestre],
       descricao: [preCadastro.descricao],
-      valorMensal: [preCadastro.valorMensal, [Validators.required, Validators.min(0), Validators.max(10000)]],
-      tipoUsuario: [preCadastro.tipoUsuario, [Validators.minLength(10)]],
+      valorMensal: [preCadastro.valorMensal, [Validators.required, Validators.min(0)]],
+      tipoUsuario: [preCadastro.tipoUsuario, [Validators.required]],
     });
   }
 
@@ -100,8 +109,8 @@ export class PreCadastroComponent implements OnInit {
   }
 
   private salvar(preCadastro: PreCadastro): void {
-    this._preCadastroService.salvar(preCadastro).subscribe(() => {
-      const config = {
+    this._preCadastroService.salvar(preCadastro).subscribe(() => {         
+        const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
           btnCancelar: 'Cadastrar um novo',
@@ -128,8 +137,9 @@ export class PreCadastroComponent implements OnInit {
         } as Alerta
       };
       this.dialog.open(AlertaComponent, config);
-    });
+      });
   }
+  
 
   private editar(preCadastro: PreCadastro): void {
     this._preCadastroService.editar(preCadastro).subscribe(() => {
