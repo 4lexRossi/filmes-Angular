@@ -10,7 +10,6 @@ import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.compone
 import { Alerta } from 'src/app/shared/models/alerta';
 import { PreCadastrosService } from 'src/app/core/preCadastros.service';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'fpt-pre-cadastro-filmes',
