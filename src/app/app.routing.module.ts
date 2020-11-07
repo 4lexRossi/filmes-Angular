@@ -5,6 +5,7 @@ import { ListagemCampanhasComponent } from './pages/campanhas/campanhas.componen
 import { PreCadastroComponent } from './pages/pre-cadastro/pre-cadastro.component';
 import { CriarCampanhaComponent } from './pages/criar-campanha/criar-campanha.component';
 import { VisualizarCampanhaComponent } from './pages/visualizar-campanha/visualizar-campanha.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 const routes: Routes = [
 
