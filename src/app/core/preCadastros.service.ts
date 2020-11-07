@@ -8,10 +8,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 
-const options = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-const url = 'http://localhost:5001/estudante/';
+const url = 'http://localhost:5001';
 
 
 @Injectable({
@@ -26,13 +23,13 @@ export class PreCadastrosService {
 
   salvar(preCadastro: PreCadastro): Observable<any> {
     
-      return this.http.post(`${environment.apiUrl}/estudante`, preCadastro, options)
+      return this.http.post(`${environment.apiUrl}/estudante`, preCadastro)
       .pipe(tap(data => { data }))
     
   }
 
   deletar(id: string) {
-    return this.http.delete(`${environment.apiUrl}/estudante/${id}`, options)
+    return this.http.delete(`${environment.apiUrl}/estudante/${id}`)
 
   }
 

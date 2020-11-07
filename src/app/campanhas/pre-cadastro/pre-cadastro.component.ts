@@ -109,11 +109,7 @@ export class PreCadastroComponent implements OnInit {
   }
 
   private salvar(preCadastro: PreCadastro): void {
-    this._preCadastroService.salvar(preCadastro).subscribe(() => {
-      this._preCadastroService.salvar(preCadastro)
-      .pipe(takeUntil(this.ngGetUsuarioUnsubscribe))
-      .subscribe(_ => {
-        const data = _;        
+    this._preCadastroService.salvar(preCadastro).subscribe(() => {         
         const config = {
         data: {
           btnSucesso: 'Ir para a listagem',
@@ -142,8 +138,8 @@ export class PreCadastroComponent implements OnInit {
       };
       this.dialog.open(AlertaComponent, config);
       });
-    }
-  )}
+  }
+  
 
   private editar(preCadastro: PreCadastro): void {
     this._preCadastroService.editar(preCadastro).subscribe(() => {
