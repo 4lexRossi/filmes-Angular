@@ -7,11 +7,11 @@ import { Alerta } from 'src/app/shared/models/alerta';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 
 @Component({
-  selector: 'fpt-visualizar-filmes',
-  templateUrl: './visualizar-filmes.component.html',
-  styleUrls: ['./visualizar-filmes.component.css']
+  selector: 'fpt-visualizar-campanha',
+  templateUrl: './visualizar-campanha.component.html',
+  styleUrls: ['./visualizar-campanha.component.css']
 })
-export class VisualizarFilmesComponent implements OnInit {
+export class VisualizarCampanhaComponent implements OnInit {
   readonly semFoto = 'https://www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg';
   filme: Filme;
   id: number;

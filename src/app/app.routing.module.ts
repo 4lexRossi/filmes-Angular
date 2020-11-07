@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FilmesModule } from './filmes/filmes.module';
-import { ListagemCampanhasComponent } from './filmes/campanhas/campanhas.component';
-import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
-import { PreCadastroComponent } from './filmes/pre-cadastro/pre-cadastro.component';
-import { CriarCampanhaComponent } from './filmes/visualizar-campanhas/criar-campanha.component';
+import { CampanhasModule } from './pages/campanhas.module';
+import { ListagemCampanhasComponent } from './pages/campanhas/campanhas.component';
+import { PreCadastroComponent } from './pages/pre-cadastro/pre-cadastro.component';
+import { CriarCampanhaComponent } from './pages/criar-campanha/criar-campanha.component';
+import { VisualizarCampanhaComponent } from './pages/visualizar-campanha/visualizar-campanha.component';
 
 const routes: Routes = [
 
@@ -43,7 +43,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: VisualizarFilmesComponent,
+        component: VisualizarCampanhaComponent,
         pathMatch: 'full'
       }
     ]
@@ -55,7 +55,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    FilmesModule
+    CampanhasModule
   ],
   exports: [RouterModule]
 })

@@ -7,9 +7,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MaterialModule } from '../shared/material/material.module';
 import { ListagemCampanhasComponent } from './campanhas/campanhas.component';
 import { CamposModule } from '../shared/components/campos/campos.module';
-import { VisualizarFilmesComponent } from './visualizar-filmes/visualizar-filmes.component';
 import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
-import { CriarCampanhaComponent } from './visualizar-campanhas/criar-campanha.component';
+import { CriarCampanhaComponent } from './criar-campanha/criar-campanha.component';
+import { VisualizarCampanhaComponent } from './visualizar-campanha/visualizar-campanha.component';
 
 @NgModule({
   imports: [
@@ -23,8 +23,8 @@ import { CriarCampanhaComponent } from './visualizar-campanhas/criar-campanha.co
   declarations: [
     CriarCampanhaComponent,
     ListagemCampanhasComponent,
-    VisualizarFilmesComponent,
+    VisualizarCampanhaComponent,
     PreCadastroComponent
   ]
 })
-export class FilmesModule { }
+export class CampanhasModule { }
