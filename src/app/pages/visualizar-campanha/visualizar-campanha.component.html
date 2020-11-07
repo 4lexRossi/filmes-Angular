@@ -1,11 +1,11 @@
-<mat-list *ngIf="filme; else semRegistro">
-  <mat-list-item> Título: {{filme.titulo}} </mat-list-item>
-  <mat-list-item> Previsão de Conclusão: {{filme.dtLancamento | date: 'dd/MM/yyyy' }} </mat-list-item>
-  <mat-list-item> Area/Curso: {{filme.genero}} </mat-list-item>
-  <mat-list-item class="quebrar-linha"> Descrição: {{filme.descricao}} </mat-list-item>
-  <mat-list-item> Sua nota para a Instituição: <a [href]="filme.urlIMDb" target="_blank"> {{filme.nota}}</a> </mat-list-item>
-  <mat-list-item> Valor mensalidade R$: {{filme.valorMensal}},00</mat-list-item>
-  <img mat-card-image [src]="filme.urlFoto || semFoto" >
+<mat-list *ngIf="campanha; else semRegistro">
+  <mat-list-item> Título: {{campanha.titulo}} </mat-list-item>
+  <mat-list-item> Previsão de Conclusão: {{campanha.dtLancamento | date: 'dd/MM/yyyy' }} </mat-list-item>
+  <mat-list-item> Area/Curso: {{campanha.areaCurso}} </mat-list-item>
+  <mat-list-item class="quebrar-linha"> Descrição: {{campanha.descricao}} </mat-list-item>
+  <mat-list-item> Sua nota para a Instituição: <a [href]="campanha.urlIMDb" target="_blank"> {{campanha.nota}}</a> </mat-list-item>
+  <mat-list-item> Valor mensalidade R$: {{campanha.valorMensal}},00</mat-list-item>
+  <img mat-card-image [src]="campanha.urlFoto || semFoto" >
 </mat-list>
 <mat-card>
   <mat-card-actions>
