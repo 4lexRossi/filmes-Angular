@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
-import { FilmesService } from 'src/app/core/filmes.service';
-import { Filme } from 'src/app/shared/models/filme';
+import { CampanhaService } from 'src/app/core/campanhas.service';
+import { Campanha } from 'src/app/shared/models/campanha';
 import { ConfigPrams } from 'src/app/shared/models/config-prams';
 
 @Component({
@@ -18,18 +18,18 @@ export class ListagemCampanhasComponent implements OnInit {
     pagina: 0,
     limite: 4
   };
-  filmes: Filme[] = [];
+  campanhas: Campanha[] = [];
   filtrosListagem: FormGroup;
-  generos: Array<string>;
+  areaCursos: Array<string>;
 
-  constructor(private filmesService: FilmesService,
+  constructor(private campanhaService: CampanhaService,
               private fb: FormBuilder,
               private router: Router) { }
 
   ngOnInit(): void {
     this.filtrosListagem = this.fb.group({
       texto: [''],
-      genero: ['']
+      areaCurso: ['']
     });
 
     this.filtrosListagem.get('texto').valueChanges
@@ -39,33 +39,33 @@ export class ListagemCampanhasComponent implements OnInit {
       this.resetarConsulta();
     });
 
-    this.filtrosListagem.get('genero').valueChanges.subscribe((val: string) => {
-      this.config.campo = {tipo: 'genero', valor: val};
+    this.filtrosListagem.get('areaCurso').valueChanges.subscribe((val: string) => {
+      this.config.campo = {tipo: 'areaCurso', valor: val};
       this.resetarConsulta();
     });
 
-    this.generos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
+    this.areaCursos = ['Cinema', 'Marketing', 'Exatas', 'Biologia', 'Humanas', 'Tecnologia da Informação', 'Jornalismo'];
     
     
-    this.listarFilmes();   
+    this.listarCampanhas();   
   }
   onScroll(): void {
-    this.listarFilmes();
+    this.listarCampanhas();
   }
 
   abrir(id: number): void {
     this.router.navigateByUrl('/campanhas/' + id);
   }
 
-  private listarFilmes(): void {
+  private listarCampanhas(): void {
     this.config.pagina++;
-    this.filmesService.listar(this.config)
-      .subscribe((filmes: Filme[]) => this.filmes.push(...filmes));
+    this.campanhaService.listar(this.config)
+      .subscribe((campanhas: Campanha[]) => this.campanhas.push(...campanhas));
   }
 
   private resetarConsulta(): void {
     this.config.pagina = 0;
-    this.filmes = [];
-    this.listarFilmes();
+    this.campanhas = [];
+    this.listarCampanhas();
   }
 }

@@ -5,7 +5,7 @@ import { Campanha } from '../shared/models/campanha';
 import { ConfigPrams } from '../shared/models/config-prams';
 import { ConfigParamsService } from './config-params.service';
 
-const url = 'http://localhost:3000/campanhas/';
+const url = 'http://localhost:3000/listar-campanhas/';
 
 @Injectable({
   providedIn: 'root'
