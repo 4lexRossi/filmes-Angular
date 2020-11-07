@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { TopoComponent } from './shared/components/topo/topo.component';
 import { RodapeComponent } from './shared/components/rodape/rodape.component';
 import { AlertaComponent } from './shared/components/alerta/alerta.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { AlertaComponent } from './shared/components/alerta/alerta.component';
     AppRoutingModule
   ],
   entryComponents: [AlertaComponent],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
