@@ -30,7 +30,12 @@ const routes: Routes = [
           {
             path: ':id',
             component: CriarCampanhaComponent
-          },
+          }         
+        ]
+      },
+      {
+        path: 'pre-cadastro',
+        children: [
           {
             path: '',
             component: PreCadastroComponent
@@ -38,7 +43,7 @@ const routes: Routes = [
           {
             path: ':id',
             component: PreCadastroComponent
-          }
+          }         
         ]
       },
       {
