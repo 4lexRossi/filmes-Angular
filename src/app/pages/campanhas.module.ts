@@ -10,6 +10,7 @@ import { CamposModule } from '../shared/components/campos/campos.module';
 import { PreCadastroComponent } from './pre-cadastro/pre-cadastro.component';
 import { CriarCampanhaComponent } from './criar-campanha/criar-campanha.component';
 import { VisualizarCampanhaComponent } from './visualizar-campanha/visualizar-campanha.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { VisualizarCampanhaComponent } from './visualizar-campanha/visualizar-ca
     CriarCampanhaComponent,
     ListagemCampanhasComponent,
     VisualizarCampanhaComponent,
-    PreCadastroComponent
+    PreCadastroComponent    
   ]
 })
 export class CampanhasModule { }
