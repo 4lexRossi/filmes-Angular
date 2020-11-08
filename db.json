@@ -133,7 +133,7 @@
       "id": 12
     }
   ],
-  "preCadastro": [
+  "estudante": [
     {
       "nome": "asdasda",
       "sobrenome": null,
@@ -147,6 +147,34 @@
       "valorMensal": 213,
       "tipoUsuario": "Doador",
       "id": 1
+    },
+    {
+      "nome": "asadsada",
+      "sobrenome": null,
+      "dataNascimento": "2020-11-25T03:00:00.000Z",
+      "sexo": null,
+      "email": "asdasd",
+      "curso": null,
+      "areaCurso": null,
+      "semestre": null,
+      "descricao": null,
+      "valorMensal": 213,
+      "tipoUsuario": "Doador",
+      "id": 2
+    },
+    {
+      "nome": "asdasd",
+      "sobrenome": null,
+      "dataNascimento": "2020-11-04T03:00:00.000Z",
+      "sexo": null,
+      "email": "asdasd",
+      "curso": null,
+      "areaCurso": null,
+      "semestre": null,
+      "descricao": null,
+      "valorMensal": 123,
+      "tipoUsuario": "Doador",
+      "id": 3
     }
   ]
 }
