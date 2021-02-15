@@ -1,7 +1,7 @@
 {
-  "name": "filmes",
+  "name": "FPT",
   "version": "0.0.0",
-  "description": "Curso avançado angular",
+  "description": "Facul pra Todos",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
