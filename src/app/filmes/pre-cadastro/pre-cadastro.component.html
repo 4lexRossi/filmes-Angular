@@ -1,0 +1,83 @@
+<mat-toolbar class="app-title">Pré Cadastro</mat-toolbar>
+<div class="main-div">
+  <mat-card class="center width50" *ngIf="preCadastro" >
+    <form autocomplete="off" novalidate [formGroup]="preCadastro" (ngSubmit)="submit()" (ngReset)="reiniciarForm()">
+      <mat-card-content>
+        <dio-input-text
+          titulo="Nome *"
+          controlName="nome"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-text>
+        <dio-input-text
+          titulo="Sobrenome"
+          controlName="sobrenome"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-text>
+        <dio-input-date
+          titulo="Data Nascimento *"
+          controlName="dataNascimento"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-date>
+        <dio-input-select
+          titulo="Sexo *"
+          [opcoes]="sexo"
+          controlName="sexo"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-select>
+        <dio-input-text
+          titulo="Email *"
+          controlName="email"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-text>
+        <dio-input-text
+          titulo="Nome curso"
+          controlName="curso"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-text>
+        <dio-input-select
+          titulo="Area Curso *"
+          [opcoes]="areaCurso"
+          controlName="areaCurso"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-select>
+        <dio-input-number
+          titulo="Semestre"
+          controlName="semestre"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-number>
+        <dio-input-textarea
+          titulo="Sobre o curso"
+          controlName="descricao"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-textarea>
+        <dio-input-number
+          titulo="Valor da Mensalidade *"
+          controlName="valorMensal"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-number>
+        <dio-input-select
+          titulo="Estudante ou Doador *"
+          [opcoes]="tipoUsuario"
+          controlName="tipoUsuario"
+          [formGroup]="preCadastro"
+          >
+        </dio-input-select>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" color="accent" mat-raised-button>Salvar</button>
+        <button type="reset" color="warn" mat-raised-button>Cancelar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

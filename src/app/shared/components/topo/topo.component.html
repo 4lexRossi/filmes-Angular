@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container" (backdropClick)="closeSideNav()">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" >
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list (click)="closeSideNav()">
+      <a mat-list-item [routerLink]="['/filmes/campanhas']">Inicial</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/filmes/campanhas/criar-campanha']">Criar Campanha</a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>Conta</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Configurações</span>
+    </button>
+  </mat-menu>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="header-toolbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSideNav()">
+        <mat-icon aria-label="Side nav toggle icon"> menu</mat-icon>
+      </button>
+      <div class="nav-itens" id="nav-itens">
+        <a mat-list-item [routerLink]="['/filmes/campanhas']">
+        <img src="../../../../assets/images/logo-fpt.png" style="width: 40px; border-radius: 10px;"></a>&nbsp;&nbsp;&nbsp;
+        <span>#FaculPraTodos</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button [routerLink]="['/filmes/campanhas/criar-campanha']" type="submit" style="background-color: #028090;" mat-raised-button>Iniciar Campanha</button>
+        <div>
+          <a href="https://www.linkedin.com/in/4lex/"
+             target="blank">
+             <img src="../../../../assets/images/linkedin-icon.png"
+             style="width: 40px; margin-left: 20px; align-self: center;"></a>
+        </div>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
+    <dio-rodape></dio-rodape>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+

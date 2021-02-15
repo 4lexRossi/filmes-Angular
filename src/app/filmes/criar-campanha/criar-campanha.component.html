@@ -1,0 +1,65 @@
+<mat-toolbar class="app-title">Criar Campanha</mat-toolbar>
+<div class="main-div">
+  <mat-card class="center width50" *ngIf="criarCampanha" >
+    <form autocomplete="off" novalidate [formGroup]="criarCampanha" (ngSubmit)="submit()" (ngReset)="resetForm()">
+      <mat-card-content>
+        <dio-input-text
+          titulo="Nome *"
+          controlName="titulo"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-text>
+        <dio-input-text
+          titulo="Foto"
+          controlName="urlFoto"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-text>
+        <dio-input-date
+          titulo="Previsão de Graduação *"
+          controlName="dtLancamento"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-date>
+        <dio-input-select
+          titulo="Area Curso *"
+          [opcoes]="areaCursos"
+          controlName="areaCurso"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-select>
+        <dio-input-textarea
+          titulo="Sobre o curso"
+          controlName="descricao"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-textarea>
+        <dio-input-number
+          titulo="Nota para seu curso *"
+          controlName="nota"
+          step="0.1"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-number>
+        <dio-input-number
+          titulo="Valor da Mensalidade *"
+          controlName="valorMensal"
+          step="0.1"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-number>
+        <dio-input-text
+          titulo="rede social (opcional)"
+          controlName="urlIMDb"
+          [formGroup]="criarCampanha"
+          >
+        </dio-input-text>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" color="accent" mat-raised-button>Salvar</button>
+        <button type="reset" color="warn" mat-raised-button>Cancelar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
