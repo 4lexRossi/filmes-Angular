@@ -32,9 +32,9 @@
 npm-debug.log
 yarn-error.log
 testem.log
-/typings
-/package-lock.json
 package-lock.json
+/typings
+
 # System Files
 .DS_Store
 Thumbs.db
